@@ -1,15 +1,16 @@
 # Elysia with Bun runtime
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
-```
-
 ## Development
+
 To start the development server run:
+
 ```bash
 bun run dev
 ```
 
-Open http://localhost:3000/ with your browser to see the result.
+## Testing
+
+To run the tests, just send requests to:
+
+GET `/ping` to simulate a successful ping response.
+GET `/error` to simulate an error response.
