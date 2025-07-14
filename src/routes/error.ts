@@ -1,14 +1,10 @@
 import Elysia from "elysia";
-import logger from "../utils/logger";
 
 const ErrorRoute = new Elysia({ prefix: "/error" })
-  .get("/", ({request}) => {
-    logger("An error occurred while processing the request", "error", {
-      req: request,
-      traceId: "12345"
-    });
+  .get("/", async ({ request }) => {
+    await new Promise((resolve) => setTimeout(resolve, Math.random() * 500));
 
-    return new Response("An error occurred", { status: 500 });
+    throw new Error("This is a simulated error for testing purposes.");
   });
 
 export default ErrorRoute;
